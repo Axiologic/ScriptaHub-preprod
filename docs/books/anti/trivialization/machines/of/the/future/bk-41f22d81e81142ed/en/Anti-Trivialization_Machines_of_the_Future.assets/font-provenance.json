@@ -1,0 +1,23 @@
+[
+  {
+    "source_name": "AAAAAA+EBGaramond-Bold",
+    "css_family": "pdf-font-9e82528ffc0c",
+    "href": "fonts/font-e3b3dd57e3ba.ttf",
+    "weight": 700,
+    "style": "normal"
+  },
+  {
+    "source_name": "BAAAAA+EBGaramond-Italic",
+    "css_family": "pdf-font-9e82528ffc0c",
+    "href": "fonts/font-bb9ec566359b.ttf",
+    "weight": 400,
+    "style": "italic"
+  },
+  {
+    "source_name": "CAAAAA+EBGaramond-Regular",
+    "css_family": "pdf-font-9e82528ffc0c",
+    "href": "fonts/font-2b440b17f583.ttf",
+    "weight": 400,
+    "style": "normal"
+  }
+]

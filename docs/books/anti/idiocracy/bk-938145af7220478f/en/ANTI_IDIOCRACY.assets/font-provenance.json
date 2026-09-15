@@ -1,0 +1,68 @@
+{
+  "source": "66f02f58d7902093c129f929c98b0795744a4d2184a99ae01724b4b68b2bf607",
+  "fonts": [
+    {
+      "source_name": "AAAAAA+EBGaramond-Regular",
+      "css_family": "pdf-font-9e82528ffc0c",
+      "href": "fonts/font-8cc68eb9a779.ttf",
+      "weight": 400,
+      "style": "normal"
+    },
+    {
+      "source_name": "BAAAAA+Carlito-Bold",
+      "css_family": "pdf-font-d77c6924e5ab",
+      "href": "fonts/font-cb0b1ec8df44.ttf",
+      "weight": 700,
+      "style": "normal"
+    },
+    {
+      "source_name": "CAAAAA+EBGaramond-Italic",
+      "css_family": "pdf-font-9e82528ffc0c",
+      "href": "fonts/font-ec03d84dcba8.ttf",
+      "weight": 400,
+      "style": "italic"
+    },
+    {
+      "source_name": "DAAAAA+Cambria",
+      "css_family": "pdf-font-8c0832f4c370",
+      "href": "fonts/font-a38386d235cb.ttf",
+      "weight": 400,
+      "style": "normal"
+    },
+    {
+      "source_name": "EAAAAA+EBGaramond-Bold",
+      "css_family": "pdf-font-9e82528ffc0c",
+      "href": "fonts/font-43aedec851da.ttf",
+      "weight": 700,
+      "style": "normal"
+    },
+    {
+      "source_name": "FAAAAA+Carlito-Regular",
+      "css_family": "pdf-font-d77c6924e5ab",
+      "href": "fonts/font-d91b208f16b1.ttf",
+      "weight": 400,
+      "style": "normal"
+    },
+    {
+      "source_name": "GAAAAA+Carlito-BoldItalic",
+      "css_family": "pdf-font-91a8b9db833a",
+      "href": "fonts/font-b7d9cf78c003.ttf",
+      "weight": 700,
+      "style": "italic"
+    },
+    {
+      "source_name": "HAAAAA+EBGaramond-BoldItalic",
+      "css_family": "pdf-font-f8f10d7f5c17",
+      "href": "fonts/font-a162842f555a.ttf",
+      "weight": 700,
+      "style": "italic"
+    },
+    {
+      "source_name": "IAAAAA+ArialMT",
+      "css_family": "pdf-font-06572dbddc97",
+      "href": "fonts/font-8e1cd6abf3ff.ttf",
+      "weight": 400,
+      "style": "normal"
+    }
+  ]
+}

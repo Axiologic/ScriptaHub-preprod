@@ -15,10 +15,13 @@
   generation, book pages, and the local-file-safe `collection.js` mirror.
   Also run `python3 tools/audit_internal_links.py --check` before hand-off; it
   validates local HTML targets and fragment anchors without contacting the web.
-- Reader editions are canonical HTML files. For any repair or new translation,
-  use the `book-reader-translations` skill and its chunk workflow. Do not
-  translate PDFs and do not use an external translation service; PDFs remain
-  English source editions only.
+- Reader editions are canonical HTML files. Use `book-reader-translations`
+  and its chunk workflow only for requested translations or repairs to
+  translated content. For layout, typography, pagination, CSS or reader
+  integration repairs, use only skills that directly support that operation;
+  do not load or invoke translation workflows. State briefly which skill is
+  needed and what concrete step it supports. Do not translate PDFs and do not
+  use an external translation service; PDFs remain English source editions only.
 - Interface support is not a request to translate a whole book. For every new
   book or new release, automatically prepare complete and ten-minute HTML
   editions in **English and Romanian only**. Translate readers into `fr`, `de`,

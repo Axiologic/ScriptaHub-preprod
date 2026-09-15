@@ -1,0 +1,42 @@
+CORECȚII DE AFIȘARE: MARGINI ȘI CUPRINS
+14 septembrie 2026
+
+Probleme găsite și corectate
+- Padding-ul interior al paginilor era generic: clamp(16px, 4cqw, 40px). Acum provine din limitele recurente ale textului PDF: sus 52 pt, dreapta 47 pt, jos 51 pt, stânga 56 pt, pentru pagina de 432 × 648 pt. Aceste proporții se adaptează lățimii paginii HTML. Indentările de alineat și numerele de subsol sunt excluse din estimare.
+- Cuprinsul nu afișa punctele de legătură și numerele paginilor. Cele 40 de intrări păstrează titlurile și legăturile, cu lider punctat și coloană numerică la dreapta.
+- Indentările cuprinsului respectă nivelurile PDF: 0 pt pentru părți, 18 pt pentru capitole și 36 pt pentru interludii, raportate la font. Interlinia provine din pasul observat în XML, aproximativ 17 pt pentru text de 11 pt. Spațiile suplimentare dintre intrările listei au fost eliminate.
+- În cititorul HTTP, stylesheet-ul sursei suprascria interlinia cuprinsului deoarece se încărca mai târziu. Regulile gestionate au acum prioritate suficientă, iar adaptorul skillului reproduce ordinea reală a stylesheet-urilor.
+- Măsurarea fonturilor verifică și descendenții elementelor flex din cuprins; nu mai raportează fals lipsa glifelor doar pentru că elementul părinte nu le raportează prin CDP.
+
+Aplicare
+Toate cele opt ediții: EN, FR, DE, ES, PT, IT, RO, PL.
+Engleza afișează numerele tipărite în cuprinsul PDF. Traducerile afișează numărul paginii din propriul cititor, verificat față de destinația legăturii; nu primesc numere englezești greșite.
+Modificările sunt implementate în skillul validateBook, în cod Node.js local și în testele sale. Nu există atribute style adăugate în HTML.
+
+Verificări finale
+- Cititor HTTP cu funcția reală de import: toate edițiile la 1440, 1024 și 390 px.
+- Padding proporțional, pagini centrate, copertă separată, titlu separat, fără pagini suprapuse.
+- Toate cele 40 de intrări ale fiecărui cuprins: indentare, interlinie, lider punctat și număr/destinație verificate.
+- Textul, ordinea blocurilor și ancorele sunt identice cu probele de dinaintea acestor corecții.
+- Fontul de bază și dialogurile rămân la 14,6667 px la 100%. Fonturile și interlinia coincid între HTML separat și cititorul HTTP.
+- Fără text ascuns/tăiat, depășiri orizontale sau diferențe de padding în verificările finale.
+- 26 de teste locale și 10 teste native de regresie trecute; verificarea HTTP completă a trecut. Verificarea legăturilor locale a trecut.
+- Hash-urile fișierelor instalate și probelor auditului final au fost verificate. Fără capturi, rescrieri sau verificări ale comenzilor +/-.
+
+Limite și constatări rămase
+Marginile sunt deduse din geometria textului extras, nu dintr-o setare editorială disponibilă în PDF. HTML-ul rămâne adaptabil: paginile pot crește în înălțime pe ecrane înguste și în traduceri.
+Auditul general rămâne needs_attention cu 288 constatări preexistente, distincte de corecțiile de mai sus:
+- unexecuted_remote_script: 8
+- source_text_unmatched: 3
+- html_text_unmatched: 12
+- missing_structural_anchor: 247
+- font_style_difference: 11
+- block_sequence_difference: 7
+Aceste diferențe de ancore, aliniere structurală și corespondență cu sursa nu au fost ascunse prin modificarea textului. Raportul nu certifică echivalența semantică a traducerilor.
+
+Probe și copii de recuperare
+Audit final: /Users/adrianganga/Desktop/devWorkNou/workspace/ScriptaHub-preprod/.book-work/anatomy-echo-padding-verified-20260914
+Test HTTP: /Users/adrianganga/Desktop/devWorkNou/workspace/ScriptaHub-preprod/.book-work/anatomy-echo-padding-20260914/http-padding-verification.json
+Copii înaintea corecției: /Users/adrianganga/Desktop/devWorkNou/workspace/ScriptaHub-preprod/.book-work/anatomy-echo-padding-correction-20260914/recovery
+Corecție CSS pentru cititor: /Users/adrianganga/Desktop/devWorkNou/workspace/ScriptaHub-preprod/.book-work/anatomy-echo-padding-cascade-20260914/recovery.json
+Raportul anterior este arhivat în directorul auditului final.

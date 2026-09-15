@@ -99,7 +99,7 @@ button { cursor: pointer; }
 .reader-theme-button { margin-left: 2px; }
 
 .reader-html-content {
-  width: min(calc(100% - 48px), 72ch);
+  width: min(calc(100% - 48px), 100.8ch);
   min-height: 100%;
   margin: 0 auto;
   padding: clamp(30px, 7vw, 72px) clamp(22px, 6vw, 76px) 96px;
@@ -127,6 +127,15 @@ button { cursor: pointer; }
 .reader-html-content .pdf-table { width: 100%; border-collapse: collapse; font-family: "Space Grotesk", sans-serif; font-size: .9em; }
 .reader-html-content .pdf-table :is(th, td) { padding: .55em .7em; border: 1px solid color-mix(in srgb, currentColor 24%, transparent); text-align: left; vertical-align: top; }
 .reader-html-content .pdf-table th { background: color-mix(in srgb, currentColor 8%, transparent); }
+.reader-html-content.summary-reader .dek { text-indent: 0; font-size: 1.1em; text-align: left; }
+.reader-html-content.summary-reader details { margin-top: 2em; border-top: 1px solid currentColor; padding-top: 1em; }
+.reader-html-content.summary-reader summary { cursor: pointer; }
+.reader-html-content.summary-reader table { width: 100%; border-collapse: collapse; font-size: .9em; }
+.reader-html-content.summary-reader :is(th, td) { padding: .6em; text-align: left; vertical-align: top; border-bottom: 1px solid currentColor; }
+@media (max-width: 620px) {
+  .reader-html-content.summary-reader :is(table, tbody, tr, th, td) { display: block; }
+  .reader-html-content.summary-reader thead { display: none; }
+}
 .reader-html-content .pdf-figure { margin: 1.4em 0; text-align: center; }
 .reader-html-content .pdf-figure img { width: auto; max-width: 100%; margin: 0 auto; }
 .reader-html-content .pdf-figure figcaption { margin-top: .4em; font: .75em/1.4 "Space Grotesk", sans-serif; opacity: .68; }
@@ -207,3 +216,18 @@ button { cursor: pointer; }
 
 /* The synchronous head/bootstrap styles cover the reader before its deferred JS. */
 :root[data-theme="dark"],:root[data-theme="dark-orange"]{color-scheme:dark;--reader-bg:#080a0c;--reader-ui-ink:#f5f5f5}
+
+/* Reviewed PDF link roles override host accent palettes only inside this edition. */
+.reader-html-content[data-pdf-fidelity="iron-salt"] { font-size: calc(var(--reader-font-size) / 1.24); }
+.reader-html-content[data-pdf-fidelity="iron-salt"] .source-contents a,
+.reader-html-content[data-pdf-fidelity="iron-salt"] .source-copyright a { color: inherit !important; }
+.reader-html-content[data-pdf-fidelity="iron-salt"] .source-copyright a:is([href="https://www.outfinity.ch"],[href="https://www.outfinity.ch/"]) { color: var(--source-link) !important; }
+
+.summary-reader { overflow-wrap: anywhere; }
+.summary-reader table { table-layout: fixed; }
+
+/* Preserve this source edition when the shared HTTP reader extracts its body. */
+.reader-html-content[data-pdf-fidelity="ai-adoption"] .pdf-table{font:inherit;width:100%;table-layout:fixed;border-collapse:collapse}
+.reader-html-content[data-pdf-fidelity="ai-adoption"] .pdf-table :is(th,td){padding:.45em;text-indent:1.4375em;border:1px solid var(--source-line);text-align:left;vertical-align:top}
+.reader-html-content[data-pdf-fidelity="ai-adoption"] .pdf-table th{font-family:AdoptionArial,sans-serif;background:#17283b;color:#fff}
+.reader-html-content[data-pdf-fidelity="ai-adoption"] .pdf-figure{margin:0 0 2em}

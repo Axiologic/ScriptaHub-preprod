@@ -119,11 +119,17 @@ async function configureLanguageSelector() {
   }
 }
 
+const textSize = { normal: 1.16, minimum: .58, maximum: 1.74, step: .058 };
+function clampTextSize(value) {
+  const size = Number(value);
+  return Math.max(textSize.minimum, Math.min(textSize.maximum, Number.isFinite(size) && size > 0 ? size : textSize.normal));
+}
+
 const state = {
   type: '',
   source: '',
   progress: readStored(progressKey, {}),
-  preferences: { ...readStored(preferenceKey, {}), fontSize: Math.max(1.16, Math.min(1.74, Number(readStored(preferenceKey, {}).fontSize) || 1.16)), theme: sharedSiteTheme().startsWith('dark') ? 'night' : 'paper' },
+  preferences: { ...readStored(preferenceKey, {}), fontSize: clampTextSize(readStored(preferenceKey, {}).fontSize), theme: sharedSiteTheme().startsWith('dark') ? 'night' : 'paper' },
   pdf: { document: null, page: 1, zoom: 1.15, fit: true, task: null, native: false, source: '' },
   epub: { book: null, rendition: null },
   htmlFrame: null,
@@ -265,6 +271,12 @@ function updateReadingProgress(position, page, total) {
 }
 
 function updateHtmlProgress(position) {
+  const pages=[...stage.querySelectorAll('section.pdf-source-page[data-reader-page]')];
+  if(pages.length){
+    const top=stage.getBoundingClientRect().top+32;
+    const index=Math.max(0,pages.findLastIndex(n=>n.getBoundingClientRect().top<=top));
+    return updateReadingProgress(position,index+1,pages.length);
+  }
   const total = Math.max(1, Math.ceil(stage.scrollHeight / Math.max(1, stage.clientHeight)));
   const page = Math.min(total, Math.floor(stage.scrollTop / Math.max(1, stage.clientHeight)) + 1);
   return updateReadingProgress(position, page, total);
@@ -287,11 +299,11 @@ function applyTextSize() {
   app.style.setProperty('--reader-font-size', `${state.preferences.fontSize}rem`);
   postHtmlFrameSettings();
   if (state.type === 'epub' && state.epub.rendition) state.epub.rendition.themes.fontSize(`${state.preferences.fontSize * 1.24}rem`);
-  sizeButton.textContent = `${Math.round(state.preferences.fontSize / 1.16 * 100)}%`;
+  sizeButton.textContent = `${Math.round(state.preferences.fontSize / textSize.normal * 100)}%`;
 }
 
 function resetDisplay() {
-  state.preferences.fontSize = 1.16;
+  state.preferences.fontSize = textSize.normal;
   state.pdf.fit = true;
   applyTextSize();
   if (state.type === 'pdf') renderPdfPage(state.pdf.page);
@@ -304,7 +316,7 @@ function changeTextSize(delta) {
     state.pdf.zoom = Math.max(.55, Math.min(3, state.pdf.zoom + delta * .14));
     renderPdfPage(state.pdf.page);
   } else {
-    state.preferences.fontSize = Math.max(1.16, Math.min(1.74, Number((state.preferences.fontSize + delta * .058).toFixed(3))));
+    state.preferences.fontSize = clampTextSize(Number((state.preferences.fontSize + delta * textSize.step).toFixed(3)));
     applyTextSize();
     savePreferences();
   }
@@ -321,6 +333,38 @@ function cleanReadableDocument(sourceDocument, sourceUrl) {
   const original = sourceDocument.querySelector('[data-reader-content], article, main, .edition-reading') || sourceDocument.body;
   const content = document.createElement('article');
   content.className = 'reader-html-content';
+  if (original.classList.contains('summary-reader') && original.querySelector('[data-summary-body]')) {
+    content.classList.add('summary-reader');
+  }
+  const source = new URL(sourceUrl);
+  const booksRoot = new URL('../books/', window.location.href);
+  const localBook = source.origin === booksRoot.origin && source.pathname.startsWith(booksRoot.pathname);
+  if (localBook) {
+    // Presentation belongs to the edition, regardless of its title, language or release.
+    for (const name of ['data-pdf-fidelity', 'data-validatebook-root', 'data-vb-style']) {
+      if (original.hasAttribute(name)) content.setAttribute(name, original.getAttribute(name));
+    }
+    content.classList.add(...original.classList);
+    for (const originalLink of sourceDocument.querySelectorAll('link[rel~="stylesheet"][href]')) {
+      let stylesheetUrl;
+      try { stylesheetUrl = new URL(originalLink.getAttribute('href'), sourceUrl); }
+      catch { continue; }
+      // Keep book-owned CSS; the standalone reader shell is already supplied here.
+      if (stylesheetUrl.origin !== booksRoot.origin || !stylesheetUrl.pathname.startsWith(booksRoot.pathname)) continue;
+      const stylesheet = originalLink.cloneNode(false);
+      stylesheet.href = stylesheetUrl.href;
+      [...stylesheet.attributes].forEach(attribute => {
+        if (attribute.name.startsWith('on')) stylesheet.removeAttribute(attribute.name);
+      });
+      content.append(stylesheet);
+    }
+    content.addEventListener('click', (event) => {
+      const link = event.target.closest('a[href^="#"]');
+      if (!link || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+      const target = [...content.querySelectorAll('[id]')].find(node => node.id === decodeURIComponent(link.hash.slice(1)));
+      if (target) { event.preventDefault(); target.scrollIntoView({ block: 'start' }); scheduleHtmlSave(); }
+    });
+  }
   const clone = original.cloneNode(true);
   clone.querySelectorAll('script, style, noscript, iframe, form, nav, header, footer').forEach((node) => node.remove());
   clone.querySelectorAll('*').forEach((element) => {
@@ -328,6 +372,7 @@ function cleanReadableDocument(sourceDocument, sourceUrl) {
       if (attribute.name.startsWith('on')) element.removeAttribute(attribute.name);
     });
     ['src', 'href', 'poster'].forEach((attribute) => {
+      if (localBook && attribute === 'href' && element.getAttribute(attribute)?.startsWith('#')) return;
       if (element.hasAttribute(attribute)) element.setAttribute(attribute, new URL(element.getAttribute(attribute), sourceUrl).href);
     });
   });
@@ -377,9 +422,10 @@ function renderLocalHtml(url) {
 
 function postHtmlFrameSettings(includePosition = false) {
   if (!state.htmlFrame?.contentWindow) return;
+  const sourceScale = (() => { try { return state.htmlFrame.contentDocument?.body?.hasAttribute('data-pdf-fidelity') ? 1 : 1.24; } catch { return 1.24; } })();
   state.htmlFrame.contentWindow.postMessage({
     type: 'axiologic-reader-settings',
-    fontSize: state.preferences.fontSize * 1.24,
+    fontSize: state.preferences.fontSize * sourceScale,
     theme: state.preferences.theme,
     position: includePosition ? Number(state.progress.htmlPosition) || 0 : undefined
   }, '*');
@@ -391,6 +437,8 @@ function turnReadingPage(direction) {
     return;
   }
   if (state.type === 'html') {
+    const pages=[...stage.querySelectorAll('section.pdf-source-page[data-reader-page]')];
+    if(pages.length){const current=updateHtmlProgress(stage.scrollTop/Math.max(1,stage.scrollHeight-stage.clientHeight)).page-1;pages[Math.max(0,Math.min(pages.length-1,current+(direction<0?-1:1)))].scrollIntoView({block:'start',behavior:'smooth'});return;}
     stage.scrollBy({ top: direction * stage.clientHeight * .9, behavior: 'smooth' });
     return;
   }

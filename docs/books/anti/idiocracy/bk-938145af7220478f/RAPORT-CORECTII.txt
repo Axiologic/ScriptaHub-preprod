@@ -1,0 +1,74 @@
+CORECȚIA LISTELOR DIN PDF, 14 septembrie 2026
+
+Cauză
+Conversia păstrase textul listelor în paragrafe continue. Verificarea anterioară urmărea prezența textului, dar nu compara elementele listelor cu geometria PDF.
+
+Corecții aplicate din skill
+- Recuperate 9 fragmente de liste, cu 56 de elemente, la paginile PDF 32, 47, 56, 57, 58, 77, 95 și 101. Pagina 57 conține două liste distincte.
+- „The limit audit”: lista numerotată are punctele 1–3 pe pagina 56 și 4–10 pe pagina 57. Fiecare punct este un element separat; paragraful „The last question is political…” este în afara listei.
+- Listele păstrează marcajele originale, numerotarea, retragerile, rândurile continuate și accentuările. Eticheta „Object” are acum bold-ul din sursă. Dimensiunea listelor este 10,5 pt = 14 px la afișarea implicită, distinctă de corpul de 11 pt.
+- pdf2html detectează listele din aceeași extracție PDF folosită pentru borduri și le reconstruiește la conversie. validateBook detectează listele aplatizate, aplică reparația text-preservantă și consolidează CSS-ul. Regula nu conține fraze sau identificatori ai cărții.
+
+Verificare finală
+836 blocuri măsurate, 698 paragrafe, 56 elemente de listă, 110 pagini. Verificarea HTTP cu importatorul real a trecut la 1440, 1024 și 390 px. Au fost verificate listele, cele 8 borduri, cuprinsul, marginile și centrarea. Textul și punctuația sunt păstrate; zero stiluri inline.
+97 teste locale au trecut. Au trecut separat testele native PDF → HTML, recuperarea listelor în Chromium și cititorul HTTP. Fără capturi sau teste +/-.
+Hash-urile intrărilor și probelor auditului au fost verificate. Rămân aceleași șase constatări anterioare, cinci diferențe editoriale pe pagina 3 și avertismentul Umami neexecutat. Nicio constatare rămasă pentru liste sau borduri.
+
+Audit final și recuperare: ScriptaHub-preprod/.book-work/anti-idiocracy-lists-final-20260914/
+Verificare HTTP: ScriptaHub-preprod/.book-work/anti-idiocracy-lists-final-20260914/http-verification.json
+Originale înaintea recuperării listelor: ScriptaHub-preprod/.book-work/anti-idiocracy-lists-corrected-20260914/recovery
+
+ISTORICUL CORECȚIILOR ANTERIOARE
+Numerele de blocuri și căile de audit de mai jos descriu etapele anterioare. Starea curentă este cea de mai sus.
+
+RAPORT DE VERIFICARE ȘI CORECȚIE — ANTI-IDIOCRACY
+14 septembrie 2026
+
+Domeniu
+Verificate PDF-ul englezesc, toate cele 110 pagini și HTML-ul complet. Există numai ediția completă EN. Celelalte limbi au pagini de prezentare, fără full_content.html; nu au fost generate traduceri.
+
+Corecția bordurilor, 14 septembrie 2026
+- Verificarea precedentă omisese bordurile desenate în PDF. Au fost găsite 8 borduri verticale gri, de 2 pt, la paginile 5, 6, 7, 22, 44, 45, 86 și 104.
+- Cele 25 de segmente verticale din PDF au fost reunite automat în cele 8 borduri. S-au restabilit culoarea #7b7b7b, grosimea proporțională și retragerile față de text, pe baza geometriei sursei.
+- Corecția este în codul reutilizabil pdf2html și validateBook. Nu există selecție după o frază sau regulă specială pentru această carte. CSS-ul rezultat este consolidat în validatebook-layout.css.
+- Cele 8 borduri au fost verificate în HTML separat și în cititorul HTTP real la 1440, 1024 și 390 px. Fonturile și interliniile tuturor celor 783 de blocuri sunt identice cu starea de dinaintea acestei corecții.
+- Nu s-au modificat textul, punctuația, PDF-ul, dimensiunea paginii cititorului sau cele 110 delimitări de pagină. HTML-ul are în continuare zero atribute style.
+- Separatoarele antetelor și bordurile tabelelor nu sunt tratate ca borduri de paragraf. Verificarea nouă nu certifică arbitrar toate formele grafice ale unui PDF.
+
+Probleme găsite și corecții aplicate anterior
+- Fonturile generice au fost înlocuite cu fețele extrase din PDF: EB Garamond pentru corp și unele titluri, Carlito pentru etichete și subtitluri, Arial pentru bibliografie. Cele nouă fișiere de font păstrează proveniența PDF.
+- Corpul este calibrat la 11 pt = 14,6667 px la 100%. Bibliografia folosește 9 pt = 12 px. Au fost corectate ierarhia și dimensiunile titlurilor, inclusiv capitolele 4 și 7 și titlul Bibliography. Pagina de titlu păstrează titlul, subtitlul, ornamentul și autorul ca blocuri separate.
+- 300 de separări și 84 de reuniri de fragmente au reparat paragrafele unite sau fragmentate la conversie. Delimitările de pagină din interiorul paragrafelor au fost reconstruite din primele rânduri ale fiecărei pagini PDF. Punctuația finală rămâne cu paragraful căruia îi aparține.
+- Toate cele 110 repere page_N sunt ordonate și au containere de pagină separate. Coperta rămâne singură pe pagina 1; titlul și autorul pe pagina 2; copyrightul începe pe pagina 3.
+- Padding-ul interior provine din geometria recurentă a textului PDF: sus 52 pt, dreapta 50 pt, jos 51 pt, stânga 56 pt, raportat la pagina de 432 × 648 pt. Antetele repetitive sunt excluse din estimare. Lățimea și centrarea cititorului sunt păstrate.
+- Cuprinsul nu mai are grilă și fals antet de tabel. Cele 10 rânduri păstrează numerele tipărite în PDF, aliniate la dreapta, și au legături către paginile corecte. Nu au fost inventate puncte de legătură, deoarece acest PDF nu le folosește.
+- Bibliografia are 55 de blocuri separate, cu fontul mic și indentarea suspendată din sursă. Antetul repetitiv BIBLIOGRAPHY de pe pagina PDF 109, ajuns accidental în textul unei referințe, a fost eliminat.
+- 80 de marcaje bold/italic au fost restaurate numai prin potriviri locale unice cu sursa. Punctuația din afara fragmentului accentuat nu mai primește accidental italic sau bold.
+- Au fost eliminate notificarea provizorie de conversie și legenda generică a copertei. Imaginea originală a copertei și PDF-ul sunt păstrate.
+- CSS-ul de prezentare este extern; HTML-ul nu conține atribute style. Cititorul importă stylesheet-ul acceptat al acestei cărți și validatebook-layout.css.
+
+Verificări finale
+- 783 blocuri HTML măsurate, dintre care 701 paragrafe, la 1440, 1024 și 390 px.
+- Verificare în cititorul HTTP cu funcția reală de import: aceleași texte, fonturi, dimensiuni și interlinii ca în HTML-ul separat.
+- Verificate delimitările paginilor, marginile, centrarea, coperta, pagina de titlu și toate destinațiile cuprinsului.
+- Fără depășiri orizontale, text ascuns sau tăiat, diferențe de padding ori de tipografie între modurile de livrare.
+- Cuvintele și punctuația originale sunt păstrate, cu excluderea explicită a notificării de conversie, legendei generice și antetului repetitiv de mai sus.
+- Zero stiluri inline. Fallback-uri la fonturi de sistem în măsurătorile finale: 0.
+- 95 de teste locale ale celor două skilluri au trecut. Au trecut separat testul nativ PDF → HTML pentru borduri, fără rasterizare, și verificarea HTTP a cărții. Opt teste opționale din suita generală nu au fost executate. Verificarea legăturilor locale din auditul cărții a trecut.
+- Hash-urile PDF-ului, HTML-ului, dependențelor și probelor auditului final au fost verificate. Nu s-au produs capturi de ecran și nu s-au testat comenzile +/-.
+
+Constatări păstrate și limite
+Auditul general rămâne needs_attention cu șase constatări: cinci diferențe de text legate de pagina 3 și un avertisment pentru scriptul extern de statistici Umami, neexecutat în verificarea locală.
+HTML-ul avea deja ScriptaHub/ScriptaHub.com în locurile în care PDF-ul conține Axiologic Research, axiologic.net sau Achilles. Aceste formulări editoriale nu au fost înlocuite într-o corecție de layout.
+21 de fragmente de accentuare și un titlu au avut potriviri ambigue în verificarea locală; nu s-au aplicat modificări suplimentare pe baza acestor potriviri. Nu este certificată identitatea pixel cu pixel. Pe ecrane înguste, înălțimea paginilor poate crește pentru a păstra textul vizibil.
+
+Actualizări reutilizabile ale skillului
+Estimarea marginilor exclude antetele repetitive. Spațierea naturală păstrează alinierea centrată sau la dreapta a blocurilor de prezentare. Fonturile folosite în PDF numai pentru spații goale nu sunt cerute artificial în textul HTML. Testele acoperă primele două reguli.
+
+Probe și recuperare
+Audit final: /Users/adrianganga/Desktop/devWorkNou/workspace/ScriptaHub-preprod/.book-work/anti-idiocracy-borders-corrected-20260914
+Verificare HTTP: /Users/adrianganga/Desktop/devWorkNou/workspace/ScriptaHub-preprod/.book-work/anti-idiocracy-borders-corrected-20260914/http-verification.json
+Originale și corecții structurale: /Users/adrianganga/Desktop/devWorkNou/workspace/ScriptaHub-preprod/.book-work/anti-idiocracy-layout-20260914
+Calibrare și copii HTML/CSS: /Users/adrianganga/Desktop/devWorkNou/workspace/ScriptaHub-preprod/.book-work/anti-idiocracy-corrected-20260914/recovery
+
+Recuperare înaintea corecției bordurilor: ScriptaHub-preprod/.book-work/anti-idiocracy-borders-corrected-20260914/recovery

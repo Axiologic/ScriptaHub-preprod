@@ -1,0 +1,34 @@
+@font-face{font-family:EchoGaramond;src:url('EBGaramond-Regular.ttf');font-weight:400 800;font-style:normal;font-display:swap}
+@font-face{font-family:EchoGaramond;src:url('EBGaramond-Italic.ttf');font-weight:400 800;font-style:italic;font-display:swap}
+@font-face{font-family:EchoSansFallback;src:url('NotoSans-Regular.ttf');font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:EchoCarlito;src:url('EchoCarlito-700.ttf');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:EchoCalibri;src:url('EchoCalibri-700.ttf');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:EchoCalibri;src:url('EchoCalibri-400.ttf');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:EchoCarlito;src:url('EchoCarlito-400.ttf');font-weight:400;font-style:normal;font-display:swap}
+[data-pdf-fidelity="anatomy-echo"]{--source-ink:#000;--source-link:#164b79;font-family:EchoGaramond,serif;font-size:var(--reader-font-size,var(--standalone-size,1.16rem));line-height:1.38;font-synthesis:none;color:var(--source-ink);box-sizing:border-box;overflow-wrap:break-word}
+[data-pdf-fidelity="anatomy-echo"] p{font-family:inherit;margin:0 0 .2em;text-indent:1.470588em;text-align:justify;line-height:1.38;hyphens:none}
+[data-pdf-fidelity="anatomy-echo"] :is(h1,h2){font-family:EchoGaramond,serif!important;color:inherit;line-height:1.22;text-align:center;border:0;padding:0}
+[data-pdf-fidelity="anatomy-echo"] :is(.source-part,.source-chapter){font-family:var(--heading-face),EchoSansFallback,EchoGaramond,serif!important;font-weight:var(--heading-weight);font-size:var(--heading-size);margin:2em 0 1.2em}
+[data-pdf-fidelity="anatomy-echo"] .source-heading-label{font-family:var(--label-face),EchoSansFallback,EchoGaramond,serif;font-weight:var(--label-weight);font-size:var(--label-size)}
+[data-pdf-fidelity="anatomy-echo"] .source-part{margin:4em 0 2.5em}
+[data-pdf-fidelity="anatomy-echo"] :is(h1,h2)+p{ text-indent:0 }
+[data-pdf-fidelity="anatomy-echo"] .source-title{font-size:2.705882em;font-weight:400;margin:2em 0 .7em}
+[data-pdf-fidelity="anatomy-echo"] .source-subtitle{font-size:1.235294em;font-style:italic;text-align:center;text-indent:0;margin:0 0 3em}
+[data-pdf-fidelity="anatomy-echo"] .source-epigraph{font-size:1em;font-style:italic;text-align:right;text-indent:0;margin:0 0 4em}
+[data-pdf-fidelity="anatomy-echo"] .source-credit{font-size:.941176em;margin:.5em 0;text-indent:0}
+[data-pdf-fidelity="anatomy-echo"] .source-author-note{font-size:.941176em;font-weight:700;text-align:left;margin:1.5em 0 .5em}
+[data-pdf-fidelity="anatomy-echo"] .source-contents-heading{font-size:1.411765em;font-weight:700;text-align:left;margin:2em 0 1em}
+[data-pdf-fidelity="anatomy-echo"] .source-toc{list-style:none;margin:0 0 2em;padding:0}
+[data-pdf-fidelity="anatomy-echo"] .source-toc li{margin:.25em 0;line-height:1.38}
+[data-pdf-fidelity="anatomy-echo"] .source-toc a{color:inherit;text-decoration:none}
+[data-pdf-fidelity="anatomy-echo"] .source-toc a:hover{text-decoration:underline}
+[data-pdf-fidelity="anatomy-echo"] .toc-part{font-weight:700;margin-top:.7em!important}
+[data-pdf-fidelity="anatomy-echo"] .toc-chapter{padding-left:1.588235em}
+[data-pdf-fidelity="anatomy-echo"] .toc-interlude{padding-left:3.176471em}
+[data-pdf-fidelity="anatomy-echo"] .source-page-marker{list-style:none;margin:0!important}
+[data-pdf-fidelity="anatomy-echo"] .source-message{font-weight:700;text-align:left;text-indent:0}
+[data-pdf-fidelity="anatomy-echo"] .pdf-figure{margin:0 0 2em;text-align:center}
+[data-pdf-fidelity="anatomy-echo"] .pdf-figure img{width:auto;max-width:100%;height:auto;margin:0 auto}
+[data-pdf-fidelity="anatomy-echo"] a{color:var(--source-link)}
+:is([data-reader-app][data-theme="night"],html[data-theme="night"],html[data-theme="dark"],html[data-theme="dark-orange"]) [data-pdf-fidelity="anatomy-echo"],[data-pdf-fidelity="anatomy-echo"][data-reader-theme="night"]{--source-ink:#f1f3f0;--source-link:#a8d4f2}
+

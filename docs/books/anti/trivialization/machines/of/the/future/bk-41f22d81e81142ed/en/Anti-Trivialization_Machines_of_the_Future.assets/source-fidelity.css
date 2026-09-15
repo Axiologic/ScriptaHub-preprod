@@ -1,0 +1,4 @@
+@font-face{font-family:"pdf-font-9e82528ffc0c";src:url("fonts/font-e3b3dd57e3ba.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"pdf-font-9e82528ffc0c";src:url("fonts/font-bb9ec566359b.ttf") format("truetype");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:"pdf-font-9e82528ffc0c";src:url("fonts/font-2b440b17f583.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+.reader-html-content,.reader-html-content[data-pdf-fidelity="anti-trivialization-future"],body[data-pdf-fidelity="anti-trivialization-future"],body.pdf-reflow{font-family:"pdf-font-9e82528ffc0c",Georgia,serif;font-synthesis:none}

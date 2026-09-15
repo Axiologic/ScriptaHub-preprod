@@ -1,0 +1,45 @@
+@font-face{font-family:AdoptionGaramond;src:url('AdoptionGaramond-400-normal.ttf');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:AdoptionInter;src:url('AdoptionInter-700-normal.ttf');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:AdoptionGaramond;src:url('AdoptionGaramond-400-italic.ttf');font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:AdoptionGaramond;src:url('AdoptionGaramond-700-normal.ttf');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:AdoptionArial;src:url('AdoptionArial-700-normal.ttf');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:AdoptionInter;src:url('AdoptionInter-400-normal.ttf');font-weight:400;font-style:normal;font-display:swap}
+
+[data-pdf-fidelity="ai-adoption"]{--source-ink:#1b2429;--source-heading:#17283b;--source-accent:#4b7982;--source-line:#d8e0e5;--source-row:#f3f6f7;font-family:AdoptionGaramond,serif;font-size:var(--reader-font-size,var(--standalone-size,20px));line-height:1.39;color:var(--source-ink);max-width:35em;box-sizing:border-box;margin:auto;padding:2em;text-align:justify;hyphens:none}
+[data-pdf-fidelity="ai-adoption"] p{margin:.5em 0;text-indent:1.4375em;line-height:1.39}
+[data-pdf-fidelity="ai-adoption"] h1,[data-pdf-fidelity="ai-adoption"] h2{font-family:AdoptionInter,sans-serif;color:var(--source-heading);font-weight:700;line-height:1.15;text-align:left;text-indent:0}
+[data-pdf-fidelity="ai-adoption"] .source-chapter-title{font-size:2.1875em;margin:.6em 0 1em;padding-bottom:.3em;border-bottom:1px solid var(--source-accent)}
+[data-pdf-fidelity="ai-adoption"] h2#page_4{font-size:2.125em;border-bottom:3px solid var(--source-accent);padding-bottom:.4em}
+[data-pdf-fidelity="ai-adoption"] .source-title{font-size:3em;margin:.45em 0 .5em}
+[data-pdf-fidelity="ai-adoption"] .source-chapter-label,[data-pdf-fidelity="ai-adoption"] .source-kicker,[data-pdf-fidelity="ai-adoption"] .source-edition{font:700 .8125em/1.3 AdoptionInter,sans-serif;color:var(--source-accent);text-align:left;text-indent:0}
+[data-pdf-fidelity="ai-adoption"] .source-chapter-label{margin-top:2.5em}
+[data-pdf-fidelity="ai-adoption"] .source-kicker{padding-bottom:1em;border-bottom:3px solid var(--source-accent)}
+[data-pdf-fidelity="ai-adoption"] .source-subtitle{font-size:1.625em;color:var(--source-accent);text-indent:0;margin-bottom:1em}
+[data-pdf-fidelity="ai-adoption"] .source-description{font-size:1.0625em;text-indent:0}
+[data-pdf-fidelity="ai-adoption"] .source-audience{padding:.6em;border:1px solid var(--source-line);background:var(--source-row);margin:1em 0}
+[data-pdf-fidelity="ai-adoption"] .source-edition{margin:6em 0 7em}
+[data-pdf-fidelity="ai-adoption"] .source-copyright-heading{font-size:1.125em;font-weight:700;text-indent:0;margin-top:4em}
+[data-pdf-fidelity="ai-adoption"] .source-author-note{font:700 1.125em/1.4 AdoptionGaramond,serif;margin-top:2em}
+[data-pdf-fidelity="ai-adoption"] .source-copyright-line{font-size:1.125em;text-indent:0}
+[data-pdf-fidelity="ai-adoption"] h1+p,[data-pdf-fidelity="ai-adoption"] h2+p{ text-indent:0 }
+[data-pdf-fidelity="ai-adoption"] .source-table-caption{font:700 .75em/1.3 AdoptionInter,sans-serif;color:var(--source-accent);text-indent:0;margin-top:1em}
+[data-pdf-fidelity="ai-adoption"] .pdf-table-wrap{max-width:100%;overflow-x:auto;margin:.7em 0}
+[data-pdf-fidelity="ai-adoption"] table{width:100%;table-layout:fixed;border-collapse:collapse;font:inherit;text-align:left}
+[data-pdf-fidelity="ai-adoption"] th,[data-pdf-fidelity="ai-adoption"] td{width:50%;padding:.4em .65em;border:1px solid var(--source-line);vertical-align:top;overflow-wrap:anywhere}
+[data-pdf-fidelity="ai-adoption"] th{font-family:AdoptionArial,sans-serif;font-weight:700;background:#17283b;color:#fff}
+[data-pdf-fidelity="ai-adoption"] tr:nth-child(even) td{background:var(--source-row)}
+[data-pdf-fidelity="ai-adoption"] a{color:var(--source-accent)}
+[data-pdf-fidelity="ai-adoption"] .source-map a{color:inherit;text-decoration:none}
+[data-pdf-fidelity="ai-adoption"] .source-map a:hover{text-decoration:underline}
+[data-pdf-fidelity="ai-adoption"] .source-reference{font-size:.8125em;text-indent:-1.4375em;padding-left:1.4375em;margin:.35em 0;text-align:left}
+[data-pdf-fidelity="ai-adoption"] figure{margin:0 0 2em;text-align:center}
+[data-pdf-fidelity="ai-adoption"] figure img{max-width:100%;height:auto}
+:is([data-reader-app][data-theme="night"],html[data-theme="night"],html[data-theme="dark"],html[data-theme="dark-orange"]) [data-pdf-fidelity="ai-adoption"], [data-pdf-fidelity="ai-adoption"][data-reader-theme="night"]{--source-ink:#f1f3f0;--source-heading:#f1f3f0;--source-accent:#9ad5df;--source-line:#526068;--source-row:#27363c}
+@media(max-width:600px){[data-pdf-fidelity="ai-adoption"]{padding:1em}[data-pdf-fidelity="ai-adoption"] .source-title{font-size:2.3em}[data-pdf-fidelity="ai-adoption"] .source-chapter-title{font-size:1.8em}}
+
+.reader-html-content[data-pdf-fidelity="ai-adoption"]{font-size:calc(var(--reader-font-size)/1.24)}
+[data-pdf-fidelity="ai-adoption"] .source-chapter-title{font-family:AdoptionInter,sans-serif!important}
+
+[data-pdf-fidelity="ai-adoption"] :is(th,td){padding:.45em;text-indent:1.4375em}
+[data-pdf-fidelity="ai-adoption"] .source-method-note{font-size:.875em;color:#6a7980;text-indent:0;text-align:left}
+:is([data-reader-app][data-theme="night"],html[data-theme="night"]) [data-pdf-fidelity="ai-adoption"] .source-method-note{color:#c2c8c9}

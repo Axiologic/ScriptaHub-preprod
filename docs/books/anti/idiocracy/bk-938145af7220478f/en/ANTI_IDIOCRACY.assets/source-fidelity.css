@@ -1,0 +1,107 @@
+@font-face{font-family:AntiGaramond;src:url("fonts/font-8cc68eb9a779.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:AntiCarlito;src:url("fonts/font-cb0b1ec8df44.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:AntiGaramond;src:url("fonts/font-ec03d84dcba8.ttf") format("truetype");font-weight:400;font-style:italic;font-display:swap}
+@font-face{font-family:AntiCambria;src:url("fonts/font-a38386d235cb.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:AntiGaramond;src:url("fonts/font-43aedec851da.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:AntiCarlito;src:url("fonts/font-d91b208f16b1.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:AntiCarlito;src:url("fonts/font-b7d9cf78c003.ttf") format("truetype");font-weight:700;font-style:italic;font-display:swap}
+@font-face{font-family:AntiGaramond;src:url("fonts/font-a162842f555a.ttf") format("truetype");font-weight:700;font-style:italic;font-display:swap}
+@font-face{font-family:AntiArial;src:url("fonts/font-8e1cd6abf3ff.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+[data-pdf-fidelity="anti-idiocracy"]{font-family:AntiGaramond,serif;font-size:var(--reader-font-size,var(--standalone-size,1.16rem));line-height:1.46;color:var(--reader-ink,var(--standalone-ink));font-synthesis:none}
+ [data-pdf-fidelity="anti-idiocracy"] p{font-family:inherit;font-size:1em;margin:0 0 .4em;text-indent:0;text-align:left;line-height:1.46;hyphens:none}
+ [data-pdf-fidelity="anti-idiocracy"] :is(h1,h2,h3,h4){font-family:AntiCarlito,sans-serif;border:0;padding:0;color:inherit;font-size:1.3em;margin:1.2em 0 .6em}
+ [data-pdf-fidelity="anti-idiocracy"] .source-contents{font-family:AntiGaramond,serif;font-size:1em;width:100%;border-collapse:collapse}
+ [data-pdf-fidelity="anti-idiocracy"] .source-contents td{font-family:inherit;font-weight:400;background:none;border:0;padding:.22em 0;text-indent:0;line-height:1.4}
+ [data-pdf-fidelity="anti-idiocracy"] .source-contents td:last-child{font-family:AntiCarlito,sans-serif;text-align:right;font-size:.909091em;padding-left:1em;white-space:nowrap}
+ [data-pdf-fidelity="anti-idiocracy"] .source-contents a{color:inherit;text-decoration:none}
+ [data-pdf-fidelity="anti-idiocracy"] .pdf-table-wrap{margin:1.5em 0;overflow:visible}
+ [data-pdf-fidelity="anti-idiocracy"] .pdf-figure{margin:0}
+ [data-pdf-fidelity="anti-idiocracy"] .source-type-0{font-family:AntiCarlito;font-size:2.5454545454545454em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-1{font-family:AntiGaramond;font-size:1.2727272727272727em;font-weight:400;font-style:italic;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-2{font-family:AntiGaramond;font-size:1.2727272727272727em;font-weight:400;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-3{font-family:AntiCarlito;font-size:1.6363636363636365em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-4{font-family:AntiCarlito;font-size:0.8181818181818182em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-5{font-family:AntiGaramond;font-size:2.090909090909091em;font-weight:400;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-6{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-7{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-8{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-9{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-10{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-11{font-family:AntiCarlito;font-size:0.8181818181818182em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-12{font-family:AntiGaramond;font-size:2.090909090909091em;font-weight:400;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-13{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-14{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-15{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-16{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-17{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-18{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-19{font-family:AntiCarlito;font-size:0.8181818181818182em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-20{font-family:AntiGaramond;font-size:2.090909090909091em;font-weight:400;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-21{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:italic;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-22{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-23{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-24{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-25{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-26{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-27{font-family:AntiCarlito;font-size:0.8181818181818182em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-28{font-family:AntiGaramond;font-size:2.090909090909091em;font-weight:400;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-29{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-30{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-31{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-32{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-33{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-34{font-family:AntiCarlito;font-size:0.8181818181818182em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-35{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-36{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-37{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-38{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-39{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-40{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-41{font-family:AntiCarlito;font-size:0.8181818181818182em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-42{font-family:AntiGaramond;font-size:2.090909090909091em;font-weight:400;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-43{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-44{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-45{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-46{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-47{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-48{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-49{font-family:AntiCarlito;font-size:0.8181818181818182em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-50{font-family:AntiGaramond;font-size:2.090909090909091em;font-weight:400;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-51{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-52{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-53{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-54{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-55{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-56{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-57{font-family:AntiCarlito;font-size:0.8181818181818182em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-58{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-59{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-60{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-61{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-62{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-63{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-64{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-65{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-66{font-family:AntiCarlito;font-size:0.8181818181818182em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-67{font-family:AntiGaramond;font-size:2.090909090909091em;font-weight:400;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-68{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-69{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-70{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-71{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-72{font-family:AntiGaramond;font-size:1em;font-weight:400;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-73{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-74{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-75{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-76{font-family:AntiCarlito;font-size:1.2727272727272727em;font-weight:700;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-77{font-family:AntiGaramond;font-size:0.8181818181818182em;font-weight:400;font-style:normal;text-align:left;line-height:1.25}
+[data-pdf-fidelity="anti-idiocracy"] .source-type-78{font-family:AntiGaramond;font-size:0.8181818181818182em;font-weight:400;font-style:normal;text-align:left;line-height:1.25}
+ [data-pdf-fidelity="anti-idiocracy"] [id="page_2"]{text-align:center;margin-top:43.75cqw;margin-bottom:0}
+ 
+[data-pdf-fidelity="anti-idiocracy"] [id="page_2"] + p{text-align:center;margin:5.787037cqw 0 0;font-size:1.272727em}
+[data-pdf-fidelity="anti-idiocracy"] .source-ornament{text-align:center;font-size:.818182em;margin:3.47cqw 0 0}
+[data-pdf-fidelity="anti-idiocracy"] .source-author{text-align:center;font-size:1.272727em;margin:3.01cqw 0 0}
+
+[data-pdf-fidelity="anti-idiocracy"] [id="page_3"]{font-weight:700}
+
+[data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root] .pdf-source-page[data-reader-page="45"] > h2:nth-of-type(2){font-family:AntiGaramond;font-weight:400;font-size:calc(var(--validatebook-font-size,var(--reader-font-size,var(--standalone-size,18.56px))) * 1.652298850574713);line-height:1.25}
+[data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root] .pdf-source-page[data-reader-page="107"] > h2:nth-of-type(1){font-family:AntiGaramond;font-weight:400;font-size:calc(var(--validatebook-font-size,var(--reader-font-size,var(--standalone-size,18.56px))) * 1.652298850574713);line-height:1.25}

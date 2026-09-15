@@ -1,0 +1,21 @@
+CORECȚIA LISTELOR DIN PDF, 14 septembrie 2026
+
+Cauză
+Conversia păstrase textul listelor în paragrafe continue. Verificarea anterioară urmărea prezența textului, dar nu compara elementele listelor cu geometria PDF.
+
+Corecții aplicate din skill
+- Recuperate 9 fragmente de liste, cu 56 de elemente, la paginile PDF 32, 47, 56, 57, 58, 77, 95 și 101. Pagina 57 conține două liste distincte.
+- „The limit audit”: lista numerotată are punctele 1–3 pe pagina 56 și 4–10 pe pagina 57. Fiecare punct este un element separat; paragraful „The last question is political…” este în afara listei.
+- Listele păstrează marcajele originale, numerotarea, retragerile, rândurile continuate și accentuările. Eticheta „Object” are acum bold-ul din sursă. Dimensiunea listelor este 10,5 pt = 14 px la afișarea implicită, distinctă de corpul de 11 pt.
+- pdf2html detectează listele din aceeași extracție PDF folosită pentru borduri și le reconstruiește la conversie. validateBook detectează listele aplatizate, aplică reparația text-preservantă și consolidează CSS-ul. Regula nu conține fraze sau identificatori ai cărții.
+
+Verificare finală
+836 blocuri măsurate, 698 paragrafe, 56 elemente de listă, 110 pagini. Verificarea HTTP cu importatorul real a trecut la 1440, 1024 și 390 px. Au fost verificate listele, cele 8 borduri, cuprinsul, marginile și centrarea. Textul și punctuația sunt păstrate; zero stiluri inline.
+97 teste locale au trecut. Au trecut separat testele native PDF → HTML, recuperarea listelor în Chromium și cititorul HTTP. Fără capturi sau teste +/-.
+Hash-urile intrărilor și probelor auditului au fost verificate. Rămân aceleași șase constatări anterioare, cinci diferențe editoriale pe pagina 3 și avertismentul Umami neexecutat. Nicio constatare rămasă pentru liste sau borduri.
+
+Audit final și recuperare: ScriptaHub-preprod/.book-work/anti-idiocracy-lists-final-20260914/
+Verificare HTTP: ScriptaHub-preprod/.book-work/anti-idiocracy-lists-final-20260914/http-verification.json
+Originale înaintea recuperării listelor: ScriptaHub-preprod/.book-work/anti-idiocracy-lists-corrected-20260914/recovery
+
+Detalii și istoricul corecțiilor: RAPORT-CORECTII.txt

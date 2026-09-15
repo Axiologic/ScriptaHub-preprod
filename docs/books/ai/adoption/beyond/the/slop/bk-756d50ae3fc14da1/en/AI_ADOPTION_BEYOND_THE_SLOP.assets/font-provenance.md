@@ -1,0 +1,1 @@
+Six embedded subset font streams copied byte-for-byte from the unchanged English source PDF with qpdf: EB Garamond regular/bold/italic, Inter regular/bold, Arial bold. Used only for this edition. Original PDF and source typography evidence are retained.

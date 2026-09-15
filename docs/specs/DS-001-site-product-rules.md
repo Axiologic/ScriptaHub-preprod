@@ -18,6 +18,23 @@ Generated files are replaced from their sources. Do not patch generated book pag
 
 ## 3. Page topology
 
+The English full reader for A Balance of Iron and Salt opts into its PDF-derived
+book-owned typography via `data-pdf-fidelity="iron-salt"`. HTTP extraction retains
+this marker and loads only the known local stylesheet for that exact canonical
+book route. Other editions keep their existing rendering. Preserve EB Garamond,
+Noto Sans notices, proportional text controls, borderless linked contents and
+fragment navigation inside the reader. Never import arbitrary book head styles
+or execute book scripts to restore presentation. Local iframe mode loads the
+same stylesheet directly. Recovery candidates are not published editions.
+
+The English full reader for AI Adoption Beyond the Slop uses the separate
+`data-pdf-fidelity="ai-adoption"` marker on its exact canonical route. It retains
+the source EB Garamond text, Inter headings, Arial table headers, shaded two-column
+contents, paragraph indentation and bibliography links. The shared reader loads
+only that book's known local stylesheet on the same origin and preserves fragment
+navigation. Its short reader keeps the existing summary layout. The source PDF
+and edition identity remain unchanged by HTML corrections.
+
 The site has these product surfaces:
 
 - `docs/index.html`: the library entrance, introduction, keyword cloud, featured book, and dynamic keyword results.
@@ -116,6 +133,8 @@ workflow pages. The reader retains its own bounded reading measure. Desktop and 
 The homepage librarian and its choices render before the catalogue is available. Confine the loading indicator and busy state to the featured-book strip while its content and cover initialise. Visitors can write a librarian question immediately; their text survives catalogue initialisation. Match the loader to its foreground strip and remove it promptly, without artificial delays.
 
 ## 11. Reader editions
+
+The shared reader supports every edition under `docs/books/`, including translations and archived editions, without title or book-ID allowlists. When importing HTML, preserve its presentation attributes and load its declared local book stylesheets in document order, resolving asset URLs relative to the source edition. Keep fragment navigation inside the reader. The standalone reader shell is not imported into the shared shell.
 
 Reader editions are canonical HTML. Repairs and translations use the chunk workflow in the `book-reader-translations` skill. PDFs remain English source editions and are not translated. The reader keeps language selection usable and uses the same single-state light/dark toggle as the main site. Compact mobile reader headers and footers must not overlap content or wrap into chaotic control rows.
 
@@ -585,3 +604,47 @@ Pointer movement outside its control rail clears hover and pointer-era button
 focus as reasons to keep it open; it hides after 3.5 seconds without interaction.
 Keyboard navigation still reveals controls. Attach outside-pointer listeners only
 while connected and remove them on disconnect.
+
+The English full reader for AI Agents (`bk-92eca672686a4f90`) uses the scoped
+`data-pdf-fidelity="ai-agents"` presentation. Preserve its source Arial body and
+headings, Garamond credits, complete contents and reference tables, and local
+font assets. The shared reader accepts its book-owned stylesheet only for the
+exact same-origin English full-content route; metadata-only language pages
+do not opt in. Typography remains responsive and follows reader theme colors.
+
+Anatomy of an Echo (`bk-7a0e708c9ac4499a`) uses the shared book-owned
+`data-pdf-fidelity="anatomy-echo"` presentation for its eight existing full
+readers. Preserve the 40 linked contents entries and stable part/chapter/
+interlude identities while retaining locale-specific page anchors and prose.
+Source heading fonts and sizes are mapped from English; local full Garamond
+and a local sans fallback cover translated glyphs. The reader stylesheet
+allowlist is restricted to this book's same-origin full-content routes.
+Final validation/correction text reports belong beside the book manifest;
+technical evidence and recovery copies remain in the private job directory.
+
+Source-faithful HTML readers receive the default font setting without the
+legacy 1.24 iframe multiplier whenever their body declares data-pdf-fidelity.
+This is a marker contract, not a growing list of title routes. The validateBook
+skill calibrates physical PDF point sizes to CSS pixels, measures baseline
+leading and rendered word gaps, and checks the static iframe default settings.
+Explicit natural-spacing requests apply through its shared correction policy
+across existing languages. Font controls remain available and are not part of
+this validation workflow.
+
+### Validated book presentation in the HTML reader
+
+For an accepted same-origin source-fidelity edition, preserve the validator-managed root and declaration-group attributes when importing its body into the reader article. Import only its explicitly marked, same-directory `validatebook-layout.css`. This retains the calibrated default typography for short dialogue, prose and headings after inline declarations have been moved to CSS. Verify standalone and imported-article typography at the default size; a successful iframe check does not certify HTTP article import.
+
+### Reading width and text-size range
+
+The generic `.reader-html-content` rule uses `width: min(calc(100% - 48px), 100.8ch)` and `padding: clamp(30px, 7vw, 72px) clamp(22px, 6vw, 76px) 96px`. Do not add a global full-width override. Book-specific source-fidelity styles remain separate. HTML and EPUB text controls range from 50% to 150% in 5% steps; reset returns to 100%. Persist and restore sizes below 100% without clamping them back to the default. PDF zoom retains its separate controls.
+
+For imported HTML, the host reader owns the page width, maximum width, centering and outer padding. Source-fidelity CSS must not override those properties on `.reader-html-content`, including through a later stylesheet or a media query. Check the computed container geometry against the host rule, not just the text of reader.css. Preserve source typography inside that container.
+
+The default text size remains 1.16rem at 100%. Increase only the reading page width cap from 72ch to 100.8ch, a 40% increase, still limited to the viewport minus 48px and centered with automatic margins. Preserve the existing padding, typography and 50–150% text controls. Do not reinterpret a requested page-width increase as a font-size increase.
+
+### HTML source pagination
+
+Validated book HTML preserves source page boundaries as section.pdf-source-page[data-reader-page] containers. Cover and title pages are separate. English page numbers map to the PDF; existing translated page numbers remain edition-specific. Containers retain the centered reader geometry and current type scale, show separated sheets, and may expand to avoid clipping on small screens or in translations. Reader progress and previous/next controls use these containers instead of screen-height estimates.
+
+The existing English Anti-Idiocracy full reader accepts its same-origin `data-pdf-fidelity="anti-idiocracy"` stylesheet and managed presentation. Preserve its PDF-derived Garamond/Carlito hierarchy, page boundaries, margins and linked borderless contents when importing into the reader. This does not create missing translated editions.

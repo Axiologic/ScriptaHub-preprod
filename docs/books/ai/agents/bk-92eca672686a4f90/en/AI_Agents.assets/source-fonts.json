@@ -1,0 +1,30 @@
+{
+  "sourcePdfSha256": "639523a0737a463910eeeea263c6cd90f4ba09428be3cb72bfb3f50625446618",
+  "fonts": [
+    {
+      "family": "AgentsArial",
+      "weight": 400,
+      "file": "AgentsArial-400.ttf",
+      "sourceObject": 4,
+      "fontStream": 1884,
+      "sha256": "ffc1436674dc9d880aafe246c210705a229ea45d7a908a3c51b4ece57d6d6c30"
+    },
+    {
+      "family": "AgentsGaramond",
+      "weight": 700,
+      "file": "AgentsGaramond-700.ttf",
+      "sourceObject": 9,
+      "fontStream": 1888,
+      "sha256": "a7cf869d10a6aec1e2ed91e0d2b3dad29f41478b870800b6bd9d4063e9691fc9"
+    },
+    {
+      "family": "AgentsGaramond",
+      "weight": 400,
+      "file": "AgentsGaramond-400.ttf",
+      "sourceObject": 10,
+      "fontStream": 1892,
+      "sha256": "60b166b10aab3d00d337c77685940bbf7df8e02515d87bfba35ce2728a5981ad"
+    }
+  ],
+  "notes": "Embedded PDF font subsets; Garamond applies only to credits. Arial is the main source face. Source XML font sizes: body 17, chapter 34, subsection 23, table 14, caption 13."
+}

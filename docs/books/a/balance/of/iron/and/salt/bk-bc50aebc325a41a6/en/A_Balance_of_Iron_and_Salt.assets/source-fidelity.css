@@ -1,0 +1,93 @@
+@font-face { font-family: "Iron Salt Garamond"; src: url("EBGaramond-Regular.ttf") format("truetype"); font-weight: 400 800; font-style: normal; font-display: swap; }
+@font-face { font-family: "Iron Salt Garamond"; src: url("EBGaramond-Italic.ttf") format("truetype"); font-weight: 400 800; font-style: italic; font-display: swap; }
+@font-face { font-family: "Iron Salt Noto"; src: url("NotoSans-Regular.ttf") format("truetype"); font-weight: 100 900; font-style: normal; font-display: swap; }
+[data-pdf-fidelity="iron-salt"] {
+  --source-ink: #000000;
+  --source-note-ink: #1e252b;
+  --source-link: #0000ff;
+  color: var(--source-ink);
+  font-family: "Iron Salt Garamond", serif;
+  font-size: var(--reader-font-size, var(--standalone-size, 1.16rem));
+  line-height: 1.53882;
+  font-synthesis: none;
+  overflow-wrap: anywhere;
+}
+body.pdf-reflow:has(> [data-pdf-fidelity="iron-salt"]),
+.reader-html-content[data-pdf-fidelity="iron-salt"] {
+  box-sizing: border-box;
+  width: min(100%, 43.5em);
+  padding: 0;
+  margin: 0 auto;
+}
+[data-pdf-fidelity="iron-salt"] > section {
+  box-sizing: border-box;
+  padding: 4.5em 9.3793% 4em 10.7586%;
+  min-height: 63em;
+  break-before: page;
+}
+[data-pdf-fidelity="iron-salt"] p {
+  margin: 0;
+  font-size: 1em;
+  line-height: 1.53882;
+  text-indent: 0;
+  text-align: justify;
+  hyphens: manual;
+}
+[data-pdf-fidelity="iron-salt"] p.source-indent { text-indent: 1.4375em; }
+[data-pdf-fidelity="iron-salt"] :is(h1,h2,h3) {
+  color: inherit;
+  font-family: inherit;
+  font-size: 1.5em;
+  line-height: 1.5;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 .7em;
+  padding: 0;
+  border: 0;
+  letter-spacing: 0;
+}
+[data-pdf-fidelity="iron-salt"] .source-first-chapter { padding-top: 10.05em; }
+[data-pdf-fidelity="iron-salt"] .source-title { padding-top: 20.8em; }
+[data-pdf-fidelity="iron-salt"] .source-title h2 { font-size: 2.416667em; line-height: 1.50075; margin: 0 0 .25em; }
+[data-pdf-fidelity="iron-salt"] .source-title p { font-size: 1.083333em; text-align: center; }
+[data-pdf-fidelity="iron-salt"] .source-copyright p { font-size: .875em; line-height: 1.5; text-align: left; }
+[data-pdf-fidelity="iron-salt"] .source-copyright p:nth-child(2),
+[data-pdf-fidelity="iron-salt"] .source-copyright p:nth-child(3),
+[data-pdf-fidelity="iron-salt"] .source-copyright p:nth-child(4) { font-size: .833333em; }
+[data-pdf-fidelity="iron-salt"] .source-copyright p:nth-child(3) { margin-top: 1.5em; }
+[data-pdf-fidelity="iron-salt"] .source-copyright p:nth-child(5) { margin-top: 2.4em; }
+[data-pdf-fidelity="iron-salt"] .source-copyright p:nth-child(n+6) {
+  color: var(--source-note-ink);
+  text-indent: 3.428571em;
+  text-align: justify;
+  line-height: 1.408319;
+  margin: 0;
+}
+[data-pdf-fidelity="iron-salt"] .source-copyright a { color: inherit; }
+[data-pdf-fidelity="iron-salt"] .source-copyright a[href="https://www.outfinity.ch"] { color: var(--source-link); }
+html[data-theme="night"] [data-pdf-fidelity="iron-salt"],
+[data-reader-app][data-theme="night"] [data-pdf-fidelity="iron-salt"] {
+  --source-ink: #f1f3f0;
+  --source-note-ink: #f1f3f0;
+  --source-link: #9af2c6;
+}
+[data-pdf-fidelity="iron-salt"] .source-contents { list-style: none; padding: 0; margin: 0; }
+[data-pdf-fidelity="iron-salt"] section.source-contents { padding: 7.8em 9.3793% 4em 10.7586%; }
+[data-pdf-fidelity="iron-salt"] .source-contents h2 { margin-bottom: 1.15em; }
+[data-pdf-fidelity="iron-salt"] .source-contents li { margin: 0; padding: 0; }
+[data-pdf-fidelity="iron-salt"] .source-contents a { display: flex; align-items: last baseline; gap: .3em; color: inherit; text-decoration: none; line-height: 1.555; }
+[data-pdf-fidelity="iron-salt"] .source-contents a:hover .contents-title { text-decoration: underline; }
+[data-pdf-fidelity="iron-salt"] .contents-title { flex: 0 1 auto; min-width: 0; }
+[data-pdf-fidelity="iron-salt"] .contents-leader { flex: 1 0 .5em; border-bottom: 1px dotted currentColor; }
+[data-pdf-fidelity="iron-salt"] .contents-page { flex: 0 0 1.6em; text-align: right; }
+[data-pdf-fidelity="iron-salt"] .source-notice { font-family: "Iron Salt Noto", sans-serif; font-size: .708333em; line-height: 1.362075; text-indent: 0; text-align: center; margin: .823529em 0; }
+[data-pdf-fidelity="iron-salt"] .source-colophon p { font-size: .75em; text-align: center; line-height: 1.9453; }
+[data-pdf-fidelity="iron-salt"] section.source-cover { padding: 0; min-height: 0; }
+[data-pdf-fidelity="iron-salt"] .source-cover figure { margin: 0; }
+[data-pdf-fidelity="iron-salt"] .source-cover img { width: 100%; height: auto; margin: 0; display: block; }
+@media(max-width: 600px) {
+  [data-pdf-fidelity="iron-salt"] > section { padding-inline: 6%; min-height: 0; padding-block: 3em; }
+  [data-pdf-fidelity="iron-salt"] section.source-title { padding-block: 6em; }
+  [data-pdf-fidelity="iron-salt"] section.source-contents { padding: 3em 6%; }
+  [data-pdf-fidelity="iron-salt"] .source-chapter p:not(.source-notice) { text-align: left; }
+}

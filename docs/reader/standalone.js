@@ -15,8 +15,9 @@
   const metrics = () => {
     const available = maximumScroll();
     const position = available > 0 ? window.scrollY / available : 0;
-    const total = Math.max(1, Math.ceil(document.documentElement.scrollHeight / Math.max(1, window.innerHeight)));
-    const page = Math.min(total, Math.floor(window.scrollY / Math.max(1, window.innerHeight)) + 1);
+    const pages=[...document.querySelectorAll('section.pdf-source-page[data-reader-page]')];
+    const total = pages.length || Math.max(1, Math.ceil(document.documentElement.scrollHeight / Math.max(1, window.innerHeight)));
+    const page = pages.length?Math.max(0,pages.findLastIndex(n=>n.getBoundingClientRect().top<=32))+1:Math.min(total, Math.floor(window.scrollY / Math.max(1, window.innerHeight)) + 1);
     return { position: Math.max(0, Math.min(1, position)), page, total };
   };
 
@@ -56,6 +57,8 @@
       goToPosition(0, 'smooth');
     }
     if (event.data?.type === 'axiologic-reader-page') {
+      const pages=[...document.querySelectorAll('section.pdf-source-page[data-reader-page]')];
+      if(pages.length){pages[Math.max(0,Math.min(pages.length-1,metrics().page-1+(Number(event.data.direction)<0?-1:1)))].scrollIntoView({block:'start',behavior:'smooth'});window.setTimeout(report,360);return;}
       window.scrollBy({ top: (Number(event.data.direction) < 0 ? -1 : 1) * window.innerHeight * .9, behavior: 'smooth' });
     }
     if (event.data?.type === 'axiologic-reader-seek') goToPosition(event.data.position, 'smooth');

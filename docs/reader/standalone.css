@@ -17,7 +17,7 @@ html {
 }
 
 body {
-  width: min(calc(100% - 48px), 72ch);
+  width: min(calc(100% - 48px), 100.8ch);
   min-height: 100vh;
   margin: 0 auto;
   padding: clamp(34px, 7vw, 76px) clamp(24px, 6vw, 72px) 90px;
