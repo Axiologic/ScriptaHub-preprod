@@ -99,9 +99,14 @@ button { cursor: pointer; }
 .reader-theme-button { margin-left: 2px; }
 
 .reader-html-content {
-  width: min(calc(100% - 48px), 100.8ch);
+  --standalone-size: var(--reader-font-size);
+  width: min(calc(100% - 48px), 920px);
   min-height: 100%;
   margin: 0 auto;
+}
+
+.reader-html-content:not([data-pdf-fidelity]):not([data-validatebook-root]):not([data-reader-host-probe]) {
+  width: min(calc(100% - 48px), 100.8ch);
   padding: clamp(30px, 7vw, 72px) clamp(22px, 6vw, 76px) 96px;
   color: var(--reader-ink);
   background: var(--reader-paper);
@@ -112,37 +117,38 @@ button { cursor: pointer; }
   line-height: 1.72;
 }
 
-.reader-html-content :is(h1, h2, h3, h4) { margin: 2.1em 0 .65em; color: #0a1514; font-family: "Space Grotesk", sans-serif; line-height: 1.22; }
-.reader-html-content h1 { margin-top: 0; font-size: 1.9em; }
-.reader-html-content h2 { font-size: 1.34em; }
-.reader-html-content p {
+.reader-html-content:not([data-pdf-fidelity]):not([data-validatebook-root]) :is(h1, h2, h3, h4) { margin: 2.1em 0 .65em; color: #0a1514; font-family: "Space Grotesk", sans-serif; line-height: 1.22; }
+.reader-html-content:not([data-pdf-fidelity]):not([data-validatebook-root]) h1 { margin-top: 0; font-size: 1.9em; }
+.reader-html-content:not([data-pdf-fidelity]):not([data-validatebook-root]) h2 { font-size: 1.34em; }
+.reader-html-content:not([data-pdf-fidelity]):not([data-validatebook-root]) p {
   margin: 0 0 .72em;
   text-indent: 1.45em;
   text-align: justify;
   text-justify: inter-word;
   hyphens: auto;
 }
-.reader-html-content :is(.pdf-page-header, .pdf-page-number) { text-indent: 0; }
-.reader-html-content .pdf-table-wrap { max-width: 100%; margin: 1.2em 0; overflow-x: auto; }
-.reader-html-content .pdf-table { width: 100%; border-collapse: collapse; font-family: "Space Grotesk", sans-serif; font-size: .9em; }
-.reader-html-content .pdf-table :is(th, td) { padding: .55em .7em; border: 1px solid color-mix(in srgb, currentColor 24%, transparent); text-align: left; vertical-align: top; }
-.reader-html-content .pdf-table th { background: color-mix(in srgb, currentColor 8%, transparent); }
-.reader-html-content.summary-reader .dek { text-indent: 0; font-size: 1.1em; text-align: left; }
-.reader-html-content.summary-reader details { margin-top: 2em; border-top: 1px solid currentColor; padding-top: 1em; }
-.reader-html-content.summary-reader summary { cursor: pointer; }
-.reader-html-content.summary-reader table { width: 100%; border-collapse: collapse; font-size: .9em; }
-.reader-html-content.summary-reader :is(th, td) { padding: .6em; text-align: left; vertical-align: top; border-bottom: 1px solid currentColor; }
+.reader-html-content:not([data-pdf-fidelity]):not([data-validatebook-root]) :is(.pdf-page-header, .pdf-page-number) { text-indent: 0; }
+.reader-html-content:not([data-pdf-fidelity]):not([data-validatebook-root]) .pdf-table-wrap { max-width: 100%; margin: 1.2em 0; overflow-x: auto; }
+.reader-html-content:not([data-pdf-fidelity]):not([data-validatebook-root]) .pdf-table { width: 100%; border-collapse: collapse; font-family: "Space Grotesk", sans-serif; font-size: .9em; }
+.reader-html-content:not([data-pdf-fidelity]):not([data-validatebook-root]) .pdf-table :is(th, td) { padding: .55em .7em; border: 1px solid color-mix(in srgb, currentColor 24%, transparent); text-align: left; vertical-align: top; }
+.reader-html-content:not([data-pdf-fidelity]):not([data-validatebook-root]) .pdf-table th { background: color-mix(in srgb, currentColor 8%, transparent); }
+.reader-html-content.summary-reader:not([data-pdf-fidelity]):not([data-validatebook-root]) .dek { text-indent: 0; font-size: 1.1em; text-align: left; }
+.reader-html-content.summary-reader:not([data-pdf-fidelity]):not([data-validatebook-root]) details { margin-top: 2em; border-top: 1px solid currentColor; padding-top: 1em; }
+.reader-html-content.summary-reader:not([data-pdf-fidelity]):not([data-validatebook-root]) summary { cursor: pointer; }
+.reader-html-content.summary-reader:not([data-pdf-fidelity]):not([data-validatebook-root]) table { width: 100%; border-collapse: collapse; font-size: .9em; }
+.reader-html-content.summary-reader:not([data-pdf-fidelity]):not([data-validatebook-root]) :is(th, td) { padding: .6em; text-align: left; vertical-align: top; border-bottom: 1px solid currentColor; }
 @media (max-width: 620px) {
-  .reader-html-content.summary-reader :is(table, tbody, tr, th, td) { display: block; }
-  .reader-html-content.summary-reader thead { display: none; }
+  .reader-html-content.summary-reader:not([data-pdf-fidelity]):not([data-validatebook-root]) :is(table, tbody, tr, th, td) { display: block; }
+  .reader-html-content.summary-reader:not([data-pdf-fidelity]):not([data-validatebook-root]) thead { display: none; }
 }
-.reader-html-content .pdf-figure { margin: 1.4em 0; text-align: center; }
-.reader-html-content .pdf-figure img { width: auto; max-width: 100%; margin: 0 auto; }
-.reader-html-content .pdf-figure figcaption { margin-top: .4em; font: .75em/1.4 "Space Grotesk", sans-serif; opacity: .68; }
-.reader-html-content img { display: block; max-width: 100%; height: auto; margin: 1.6em auto; }
-.reader-html-content a { color: #176b4b; }
-.reader-html-content blockquote { margin: 1.5em 0; padding: .4em 1.1em; border-left: 3px solid #43a978; color: #244d3b; }
-.reader-html-content :is(nav, header, footer, script, style, noscript, form, [hidden]) { display: none !important; }
+.reader-html-content:not([data-pdf-fidelity]):not([data-validatebook-root]) .pdf-figure { margin: 1.4em 0; text-align: center; }
+.reader-html-content:not([data-pdf-fidelity]):not([data-validatebook-root]) .pdf-figure img { width: auto; max-width: 100%; margin: 0 auto; }
+.reader-html-content:not([data-pdf-fidelity]):not([data-validatebook-root]) .pdf-figure figcaption { margin-top: .4em; font: .75em/1.4 "Space Grotesk", sans-serif; opacity: .68; }
+.reader-html-content:not([data-pdf-fidelity]):not([data-validatebook-root]) img { display: block; max-width: 100%; height: auto; margin: 1.6em auto; }
+.reader-html-content:not([data-pdf-fidelity]):not([data-validatebook-root]) a { color: #176b4b; }
+.reader-html-content:not([data-pdf-fidelity]):not([data-validatebook-root]) blockquote { margin: 1.5em 0; padding: .4em 1.1em; border-left: 3px solid #43a978; color: #244d3b; }
+.reader-html-content:not([data-pdf-fidelity]):not([data-validatebook-root]) :is(nav, header, footer, form) { display: none !important; }
+.reader-html-content :is(script, style, noscript, [hidden]) { display: none !important; }
 .reader-html-frame { display: block; width: 100%; height: 100%; border: 0; background: var(--reader-surround); }
 
 .reader-pdf-page { display: grid; min-height: 100%; place-content: center; padding: 18px; background: #262723; }
@@ -155,9 +161,9 @@ button { cursor: pointer; }
 .reader-audio audio { width: 100%; height: 35px; }
 
 [data-reader-app][data-theme="night"] { color-scheme: dark; --reader-bg: #080a0c; --reader-surround: #3a3e42; --reader-paper: #080a0c; --reader-paper-line: #52575b; --reader-ink: #f1f3f0; --reader-muted: #c2c6c4; --reader-header: rgba(8, 10, 12, .94); --reader-accent: #b5dec0; --reader-ui-ink: #f8f8fb; --reader-control: rgba(255, 255, 255, .045); --reader-line: rgba(255, 255, 255, .13); }
-[data-reader-app][data-theme="night"] .reader-html-content :is(h1, h2, h3, h4) { color: #fafaf0; }
-[data-reader-app][data-theme="night"] .reader-html-content a { color: #b5dec0; }
-[data-reader-app][data-theme="night"] .reader-html-content blockquote { color: #c2c8bd; border-left-color: #87a991; }
+[data-reader-app][data-theme="night"] .reader-html-content:not([data-pdf-fidelity]):not([data-validatebook-root]) :is(h1, h2, h3, h4) { color: #fafaf0; }
+[data-reader-app][data-theme="night"] .reader-html-content:not([data-pdf-fidelity]):not([data-validatebook-root]) a { color: #b5dec0; }
+[data-reader-app][data-theme="night"] .reader-html-content:not([data-pdf-fidelity]):not([data-validatebook-root]) blockquote { color: #c2c8bd; border-left-color: #87a991; }
 
 @media (max-width: 650px) {
   .reader-header { min-height: 46px; grid-template-columns: 28px minmax(0, 1fr) auto; gap: 6px; padding: max(7px, env(safe-area-inset-top)) 8px 7px; }
@@ -182,7 +188,8 @@ button { cursor: pointer; }
   .reader-page-label { height: 28px; padding: 0 3px; gap: 2px; font-size: 0; }
   .reader-page-label input { width: 30px; padding: 3px; border-radius: 3px; font-size: .62rem; }
   .reader-page-label span { font-size: .62rem; }
-  .reader-html-content { width: 100%; padding: 32px 25px 72px; border-inline: 0; box-shadow: none; }
+  .reader-html-content { width: 100%; }
+  .reader-html-content:not([data-pdf-fidelity]):not([data-validatebook-root]):not([data-reader-host-probe]) { padding: 32px 25px 72px; border-inline: 0; box-shadow: none; }
   .reader-pdf-page { padding: 8px; }
   .reader-audio { width: min(108px, 34vw); max-width: 108px; order: 0; flex: none; }
   .reader-audio audio { width: 100%; height: 28px; }
@@ -204,30 +211,18 @@ button { cursor: pointer; }
 [data-reader-app][data-accent="nord"]:not([data-theme="night"]) { --reader-accent:#694451;--reader-bg:#f4f1ee;--reader-surround:#ded5ce;--reader-paper-line:#ded5ce;--reader-ink:#382f34;--reader-ui-ink:#382f34;--reader-muted:#6d5f65;--reader-line:rgba(56,47,52,.18);--reader-header:rgba(244,241,238,.94);--reader-action:#684653;--reader-action-hover:#382f34;--reader-quote:#684653;--reader-quote-line:#c6b7ad; }
 [data-reader-app]:is([data-accent="orange"],[data-accent="nord"]):not([data-theme="night"]) :is(.reader-button,.reader-icon-button){background:var(--reader-action);border-color:var(--reader-action)}
 [data-reader-app]:is([data-accent="orange"],[data-accent="nord"]):not([data-theme="night"]) :is(.reader-button,.reader-icon-button):is(:hover,:focus-visible){background:var(--reader-action-hover);border-color:var(--reader-action-hover)}
-[data-reader-app]:is([data-accent="orange"],[data-accent="nord"]):not([data-theme="night"]) .reader-html-content a{color:var(--reader-accent)}
-[data-reader-app]:is([data-accent="orange"],[data-accent="nord"]):not([data-theme="night"]) .reader-html-content :is(h1,h2,h3,h4){color:var(--reader-ink)}
-[data-reader-app]:is([data-accent="orange"],[data-accent="nord"]):not([data-theme="night"]) .reader-html-content blockquote{color:var(--reader-quote);border-left-color:var(--reader-quote-line)}
+[data-reader-app]:is([data-accent="orange"],[data-accent="nord"]):not([data-theme="night"]) .reader-html-content:not([data-pdf-fidelity]):not([data-validatebook-root]) a{color:var(--reader-accent)}
+[data-reader-app]:is([data-accent="orange"],[data-accent="nord"]):not([data-theme="night"]) .reader-html-content:not([data-pdf-fidelity]):not([data-validatebook-root]) :is(h1,h2,h3,h4){color:var(--reader-ink)}
+[data-reader-app]:is([data-accent="orange"],[data-accent="nord"]):not([data-theme="night"]) .reader-html-content:not([data-pdf-fidelity]):not([data-validatebook-root]) blockquote{color:var(--reader-quote);border-left-color:var(--reader-quote-line)}
 [data-reader-app]:is([data-accent="orange"],[data-accent="nord"]):not([data-theme="night"]) .reader-spinner{border-color:color-mix(in srgb,var(--reader-accent) 24%,transparent);border-top-color:var(--reader-accent)}
 
 [data-reader-app][data-theme="night"]{--reader-surround:#000000}
 [data-reader-app][data-theme="night"][data-dark-accent="dark-orange"]{--reader-accent:#ff7900;--reader-control:#24211f;--reader-line:rgba(255,190,134,.2)}
-[data-reader-app][data-theme="night"][data-dark-accent="dark-orange"] .reader-html-content a{color:#ff963d}
-[data-reader-app][data-theme="night"][data-dark-accent="dark-orange"] .reader-html-content blockquote{color:#d9c6b7;border-left-color:#ff7900}
+[data-reader-app][data-theme="night"][data-dark-accent="dark-orange"] .reader-html-content:not([data-pdf-fidelity]):not([data-validatebook-root]) a{color:#ff963d}
+[data-reader-app][data-theme="night"][data-dark-accent="dark-orange"] .reader-html-content:not([data-pdf-fidelity]):not([data-validatebook-root]) blockquote{color:#d9c6b7;border-left-color:#ff7900}
 
 /* The synchronous head/bootstrap styles cover the reader before its deferred JS. */
 :root[data-theme="dark"],:root[data-theme="dark-orange"]{color-scheme:dark;--reader-bg:#080a0c;--reader-ui-ink:#f5f5f5}
 
-/* Reviewed PDF link roles override host accent palettes only inside this edition. */
-.reader-html-content[data-pdf-fidelity="iron-salt"] { font-size: calc(var(--reader-font-size) / 1.24); }
-.reader-html-content[data-pdf-fidelity="iron-salt"] .source-contents a,
-.reader-html-content[data-pdf-fidelity="iron-salt"] .source-copyright a { color: inherit !important; }
-.reader-html-content[data-pdf-fidelity="iron-salt"] .source-copyright a:is([href="https://www.outfinity.ch"],[href="https://www.outfinity.ch/"]) { color: var(--source-link) !important; }
-
-.summary-reader { overflow-wrap: anywhere; }
-.summary-reader table { table-layout: fixed; }
-
-/* Preserve this source edition when the shared HTTP reader extracts its body. */
-.reader-html-content[data-pdf-fidelity="ai-adoption"] .pdf-table{font:inherit;width:100%;table-layout:fixed;border-collapse:collapse}
-.reader-html-content[data-pdf-fidelity="ai-adoption"] .pdf-table :is(th,td){padding:.45em;text-indent:1.4375em;border:1px solid var(--source-line);text-align:left;vertical-align:top}
-.reader-html-content[data-pdf-fidelity="ai-adoption"] .pdf-table th{font-family:AdoptionArial,sans-serif;background:#17283b;color:#fff}
-.reader-html-content[data-pdf-fidelity="ai-adoption"] .pdf-figure{margin:0 0 2em}
+.summary-reader:not([data-pdf-fidelity]):not([data-validatebook-root]) { overflow-wrap: anywhere; }
+.summary-reader:not([data-pdf-fidelity]):not([data-validatebook-root]) table { table-layout: fixed; }

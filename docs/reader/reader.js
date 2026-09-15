@@ -422,7 +422,7 @@ function renderLocalHtml(url) {
 
 function postHtmlFrameSettings(includePosition = false) {
   if (!state.htmlFrame?.contentWindow) return;
-  const sourceScale = (() => { try { return state.htmlFrame.contentDocument?.body?.hasAttribute('data-pdf-fidelity') ? 1 : 1.24; } catch { return 1.24; } })();
+  const sourceScale = (() => { try { return state.htmlFrame.contentDocument?.body?.matches('[data-pdf-fidelity], [data-validatebook-root]') ? 1 : 1.24; } catch { return 1.24; } })();
   state.htmlFrame.contentWindow.postMessage({
     type: 'axiologic-reader-settings',
     fontSize: state.preferences.fontSize * sourceScale,
