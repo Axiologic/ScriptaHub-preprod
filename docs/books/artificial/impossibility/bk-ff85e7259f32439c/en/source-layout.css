@@ -31,7 +31,7 @@
 }
 [data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root] > .pdf-source-page:has(>figure#page_1){padding:0}
 [data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root] [hidden]{display:none!important}
-[data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root] #page_2 {
+[data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root] .pdf-source-page:not([data-source-display-page]) #page_2 {
   margin:0;
   font-family:pdf-font-c84c80163560,sans-serif;
   font-weight:700;
@@ -41,12 +41,12 @@
   letter-spacing:normal;
   text-indent:0;
 }
-[data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root] [data-reader-page="2"] > p:nth-of-type(1){margin:20pt 0 0;line-height:1.5;text-indent:16.5pt}
-[data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root] [data-reader-page="2"] > p:nth-of-type(2){margin:31pt 0 0;line-height:1.5;text-indent:16.5pt}
-[data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root] [data-reader-page="2"] > p:nth-of-type(3){margin:88pt 0 0;line-height:1.5;text-indent:16.5pt}
+[data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root] .pdf-source-page:not([data-source-display-page])[data-reader-page="2"] > p:nth-of-type(1){margin:20pt 0 0;line-height:1.5;text-indent:16.5pt}
+[data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root] .pdf-source-page:not([data-source-display-page])[data-reader-page="2"] > p:nth-of-type(2){margin:31pt 0 0;line-height:1.5;text-indent:16.5pt}
+[data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root] .pdf-source-page:not([data-source-display-page])[data-reader-page="2"] > p:nth-of-type(3){margin:88pt 0 0;line-height:1.5;text-indent:16.5pt}
 @media(max-width:600px){
-  [data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root] #page_2{font-size:clamp(22px,7vw,45.333px)!important;padding-bottom:24pt;overflow-wrap:normal}
-  [data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root] [data-reader-page="2"] > p:nth-of-type(3){margin-top:50pt}
+  [data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root] .pdf-source-page:not([data-source-display-page]) #page_2{font-size:clamp(22px,7vw,45.333px)!important;padding-bottom:24pt;overflow-wrap:normal}
+  [data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root] .pdf-source-page:not([data-source-display-page])[data-reader-page="2"] > p:nth-of-type(3){margin-top:50pt}
 }
 @media(prefers-color-scheme:dark){html:not([data-theme="paper"]) [data-source-font]{color:inherit}}
 html[data-theme="night"] [data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root][data-validatebook-root] [data-source-font],
