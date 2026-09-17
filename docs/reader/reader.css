@@ -164,6 +164,9 @@ button { cursor: pointer; }
 [data-reader-app][data-theme="night"] .reader-html-content:not([data-pdf-fidelity]):not([data-validatebook-root]) :is(h1, h2, h3, h4) { color: #fafaf0; }
 [data-reader-app][data-theme="night"] .reader-html-content:not([data-pdf-fidelity]):not([data-validatebook-root]) a { color: #b5dec0; }
 [data-reader-app][data-theme="night"] .reader-html-content:not([data-pdf-fidelity]):not([data-validatebook-root]) blockquote { color: #c2c8bd; border-left-color: #87a991; }
+[data-reader-app][data-theme="night"] .reader-html-content[data-validatebook-root] > .pdf-source-page :is(p, h1, h2, h3, h4, h5, h6, li, dt, dd, blockquote, figcaption):not(.pdf-table-wrap *):not(aside *) { color: var(--reader-ink) !important; }
+[data-reader-app][data-theme="night"] .reader-html-content[data-validatebook-root] > .pdf-source-page :is(p, h1, h2, h3, h4, h5, h6, li, dt, dd, blockquote, figcaption):not(.pdf-table-wrap *):not(aside *) :is(span, em, strong, small, sup, sub, code) { color: inherit !important; }
+[data-reader-app][data-theme="night"] .reader-html-content[data-validatebook-root] > .pdf-source-page :is(p, h1, h2, h3, h4, h5, h6, li, dt, dd, blockquote, figcaption):not(.pdf-table-wrap *):not(aside *) a { color: var(--reader-accent) !important; }
 
 @media (max-width: 650px) {
   .reader-header { min-height: 46px; grid-template-columns: 28px minmax(0, 1fr) auto; gap: 6px; padding: max(7px, env(safe-area-inset-top)) 8px 7px; }
