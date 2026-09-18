@@ -32,3 +32,5 @@ __pycache__/
 /presentations/*/qa/screenshots/
 /presentations/*/work/voiced.direction.json
 /presentations/*/exports/
+/.agents/
+/.idea/
