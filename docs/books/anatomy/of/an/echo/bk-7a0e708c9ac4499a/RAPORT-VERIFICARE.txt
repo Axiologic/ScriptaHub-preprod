@@ -1,9 +1,0 @@
-RAPORT DE VERIFICARE INIȚIALĂ — Anatomy of an Echo
-14 septembrie 2026
-156 de pagini PDF; opt ediții HTML complete; 24 de verificări de afișare.
-
-Probleme identificate: fonturi generice diferite de sursă; ierarhie neuniformă a titlurilor; cuprinsuri sub formă de tabele sau paragrafe compacte; titlul părții II tăiat în EN/PT; două mesaje clasificate drept titluri în RO/DE; paragrafe de credite și patru URL-uri Outfinity lipite de textul următor; legende automate pentru copertă.
-Nu au fost găsite imagini defecte, texte ascunse/tăiate sau depășiri orizontale în măsurătorile inițiale.
-Alertele despre ancorele de pagină și numărul de paragrafe necesită separarea paginării specifice fiecărei limbi de identitatea secțiunilor. Ele nu demonstrează automat omisiuni.
-
-Corecțiile, verificările finale și limitele sunt descrise în RAPORT-CORECTII.txt din acest folder. Dovezile brute inițiale sunt păstrate în /Users/adrianganga/Desktop/devWorkNou/workspace/ScriptaHub-preprod/.book-work/anatomy-echo-layout-20260914/audit.
