@@ -341,8 +341,12 @@ function cleanReadableDocument(sourceDocument, sourceUrl) {
   const localBook = source.origin === booksRoot.origin && source.pathname.startsWith(booksRoot.pathname);
   if (localBook) {
     // Presentation belongs to the edition, regardless of its title, language or release.
+    // Some editions put the marker on <body> and the reading entry point on a
+    // nested article; accept either so book-owned CSS and typography apply.
+    const marked = element => element && (element.hasAttribute('data-validatebook-root') || element.hasAttribute('data-pdf-fidelity'));
+    const presentationRoot = marked(original) ? original : (marked(sourceDocument.body) ? sourceDocument.body : original);
     for (const name of ['data-pdf-fidelity', 'data-validatebook-root', 'data-vb-style']) {
-      if (original.hasAttribute(name)) content.setAttribute(name, original.getAttribute(name));
+      if (presentationRoot.hasAttribute(name)) content.setAttribute(name, presentationRoot.getAttribute(name));
     }
     content.classList.add(...original.classList);
     for (const originalLink of sourceDocument.querySelectorAll('link[rel~="stylesheet"][href]')) {

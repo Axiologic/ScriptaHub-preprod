@@ -105,6 +105,17 @@ button { cursor: pointer; }
   margin: 0 auto;
 }
 
+/* Book-owned editions without PDF page boxes (HTML/DOCX conversions) keep the
+   reader's readable measure; paginated editions own their page geometry. */
+.reader-html-content[data-validatebook-root]:not(:has(.pdf-source-page)) {
+  width: min(calc(100% - 48px), 72ch);
+  padding: clamp(28px, 5vw, 64px) clamp(20px, 5vw, 60px) 96px;
+  color: var(--reader-ink);
+  background: var(--reader-paper);
+  border-inline: 1px solid var(--reader-paper-line);
+  box-shadow: 0 0 28px rgba(15, 23, 20, .08);
+}
+
 .reader-html-content:not([data-pdf-fidelity]):not([data-validatebook-root]):not([data-reader-host-probe]) {
   width: min(calc(100% - 48px), 100.8ch);
   padding: clamp(30px, 7vw, 72px) clamp(22px, 6vw, 76px) 96px;
